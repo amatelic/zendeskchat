@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target  = '12.0'
   s.static_framework = true
   s.dependency 'Capacitor'
-  s.dependency 'ZDCChat', '1.4.1'
+  s.dependency 'ZDCChat', '1.4.6'
   s.swift_version = '5.1'
 end

@@ -9,7 +9,7 @@ end
 
 target 'Plugin' do
   capacitor_pods
-  pod 'ZDCChat', '~> 1.4.1'
+  pod 'ZDCChat', '~> 1.4.6'
 end
 
 target 'PluginTests' do
