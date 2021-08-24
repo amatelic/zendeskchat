@@ -1,6 +1,6 @@
 {
   "name": "zendeskChat",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "basis zendesk integration",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -44,7 +44,7 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@capacitor/android": "^3.0.0",
+    "@capacitor/android": "^3.2.0",
     "@capacitor/core": "^3.0.0",
     "@capacitor/docgen": "^0.0.10",
     "@capacitor/ios": "^3.0.0",
