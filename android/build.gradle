@@ -1,3 +1,7 @@
+//applicationId "com.mycompany.plugins.example"
+
+apply plugin: 'com.android.application'
+
 ext {
     junitVersion = project.hasProperty('junitVersion') ? rootProject.ext.junitVersion : '4.13.1'
     androidxAppCompatVersion = project.hasProperty('androidxAppCompatVersion') ? rootProject.ext.androidxAppCompatVersion : '1.2.0'
@@ -8,14 +12,13 @@ ext {
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.1'
+        classpath 'com.android.tools.build:gradle:4.2.0'
     }
 }
 
-apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 30
@@ -36,23 +39,26 @@ android {
         abortOnError false
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 }
 
 repositories {
     google()
-    jcenter()
     mavenCentral()
+    mavenLocal()
+    maven { url  "https://dl.bintray.com/ionic-team/capacitor" }
+    maven { url 'https://zendesk.jfrog.io/zendesk/repo' }
 }
 
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
-    implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
-    testImplementation "junit:junit:$junitVersion"
-    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    implementation 'com.zopim.android:sdk:1.4.6'
+   implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+   testImplementation "junit:junit:$junitVersion"
+   androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
+   androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
 }
