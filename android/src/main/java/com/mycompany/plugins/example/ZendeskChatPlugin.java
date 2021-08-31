@@ -1,4 +1,6 @@
-package com.mycompany.plugins.example;
+package com.mycompany.plugins.ZendeskChat;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
@@ -18,17 +20,6 @@ import org.json.JSONException;
 
 @CapacitorPlugin(name = "ZendeskChat")
 public class ZendeskChatPlugin extends Plugin {
-
-    private ZendeskChat implementation = new ZendeskChat();
-
-    @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
-
-        JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
-        call.resolve(ret);
-    }
 
   @PluginMethod()
   public void initialize(PluginCall call) {
